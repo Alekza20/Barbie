@@ -100,46 +100,55 @@
 
     <!-- Interfaces para cada botón -->
     <div id="page-1" class="page flex flex-col items-center justify-center text-white min-h-screen">
-        <div class="w-full h-1/2 bg-[#E0218A] p-6 flex flex-col items-center justify-center">
-            <h1 class="text-4xl font-bold mb-4 text-center text-white">Logo de Barbie</h1>
-            <p class="text-base text-center text-white">El logotipo de Barbie utiliza una tipografía cursiva en un rosa brillante que transmite alegría, feminidad, sofisticación y elegancia. Desde 1959 este tono, conocido como “rosa Barbie” (Pantone 219), se ha convertido en un símbolo de glamour y en un elemento central de la identidad visual de la marca. En 2009, Mattel lo registró oficialmente, por lo que su uso en marcas o empaques que puedan generar confusión está prohibido sin autorización. Hoy en día, este color sigue siendo un componente indispensable de la imagen y el carácter de Barbie.</p>
-        </div>
-        <div class="w-full h-1/2 bg-white flex flex-col items-center justify-center p-6">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Barbie_Logo.svg/1200px-Barbie_Logo.svg.png" alt="Logotipo de Barbie" class="mx-auto w-full max-w-sm">
-            <button class="mt-8 px-4 py-2 bg-[#E0218A] text-white rounded-full" onclick="showPage('main-page')">Volver</button>
+        <!-- Nuevo contenedor para limitar el ancho -->
+        <div class="max-w-4xl mx-auto w-full flex flex-col items-center justify-center">
+            <div class="w-full h-1/2 bg-[#E0218A] p-6 flex flex-col items-center justify-center">
+                <h1 class="text-4xl font-bold mb-4 text-center text-white">Logo de Barbie</h1>
+                <p class="text-base text-center text-white">El logotipo de Barbie utiliza una tipografía cursiva en un rosa brillante que transmite alegría, feminidad, sofisticación y elegancia. Desde 1959 este tono, conocido como “rosa Barbie” (Pantone 219), se ha convertido en un símbolo de glamour y en un elemento central de la identidad visual de la marca. En 2009, Mattel lo registró oficialmente, por lo que su uso en marcas o empaques que puedan generar confusión está prohibido sin autorización. Hoy en día, este color sigue siendo un componente indispensable de la imagen y el carácter de Barbie.</p>
+            </div>
+            <div class="w-full h-1/2 bg-white flex flex-col items-center justify-center p-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Barbie_Logo.svg/1200px-Barbie_Logo.svg.png" alt="Logotipo de Barbie" class="mx-auto w-full max-w-sm">
+                <button class="mt-8 px-4 py-2 bg-[#E0218A] text-white rounded-full" onclick="showPage('main-page')">Volver</button>
+            </div>
         </div>
     </div>
     
     <div id="page-2" class="page flex flex-col md:flex-row items-center justify-center text-white min-h-screen relative">
-        <!-- Botón de mariposa en la esquina superior izquierda -->
-        <div class="absolute top-4 left-4">
-            <button class="butterfly-button" onclick="showPage('page-10')">10</button>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col p-6 items-center justify-center">
-            <h1 class="text-3xl font-bold mb-4 text-center">Valores y misión</h1>
-            <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md text-center">
-                <p class="text-lg text-center font-bold mb-4">Nuestro compromiso</p>
-                <p class="text-base text-justify">“Sabemos que una muñeca pequeña puede causar un gran impacto. Hoy, como parte del propósito de Mattel de inspirar a la siguiente generación, Barbie se ha comprometido principalmente con la representación, el empoderamiento y la sostenibilidad ambiental.” Este compromiso se refleja en iniciativas como el proyecto Dream Gap, que busca cerrar la brecha que hace que muchas niñas pierdan confianza en sus habilidades a partir de los 5 años, proporcionándoles los recursos necesarios para seguir creyendo en sí mismas y en sus metas.</p>
+        <!-- Nuevo contenedor para limitar el ancho -->
+        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center">
+            <!-- Botón de mariposa en la esquina superior izquierda -->
+            <div class="absolute top-4 left-4">
+                <button class="butterfly-button" onclick="showPage('page-10')">10</button>
             </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4 relative">
-            <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt3ac5a8db2523a345/671975faaa96cf4dccf63096/BARBIE_AboutPage_Module1_2386w_Desktop_2024.jpg" alt="Muñeca de Barbie" class="rounded-lg shadow-lg w-full max-w-sm">
-            <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt901253c72d96d290/646513820a3fbbb4bcee3cc4/BARBIE_AboutPage_Module2_2386w_Desktop.jpg" alt="Grupo de muñecas Barbie" class="rounded-lg shadow-lg w-full max-w-sm">
-        </div>
-        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
-    </div>
-
-    <div id="page-3" class="page flex flex-col md:flex-row items-center justify-center text-white min-h-screen p-6">
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center p-6">
-            <h1 class="text-4xl font-bold mb-4 text-center">Tipografía</h1>
-            <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md text-center">
-                <p class="text-base text-justify">El logotipo de Barbie utiliza una tipografía cursiva rosa brillante con un diseño alegre que transmite sofisticación, estilo, moda y dinamismo. La fuente actual se parece mucho a una versión personalizada de Brush Script Std Medium. A lo largo de los años, también se han usado variaciones como Dollie Script y Barbie Medium, pero el estilo cursivo manuscrito del logotipo sigue siendo un sello distintivo de la marca. Esta tipografía es clave en la identidad de Barbie, ya que mezcla un toque de nostalgia con un estilo moderno, manteniendo su atractivo y fácil reconocimiento.</p>
+            <div class="w-full md:w-1/2 flex flex-col p-6 items-center justify-center">
+                <h1 class="text-3xl font-bold mb-4 text-center">Valores y misión</h1>
+                <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md text-center">
+                    <p class="text-lg text-center font-bold mb-4">Nuestro compromiso</p>
+                    <p class="text-base text-justify">“Sabemos que una muñeca pequeña puede causar un gran impacto. Hoy, como parte del propósito de Mattel de inspirar a la siguiente generación, Barbie se ha comprometido principalmente con la representación, el empoderamiento y la sostenibilidad ambiental.” Este compromiso se refleja en iniciativas como el proyecto Dream Gap, que busca cerrar la brecha que hace que muchas niñas pierdan confianza en sus habilidades a partir de los 5 años, proporcionándoles los recursos necesarios para seguir creyendo en sí mismas y en sus metas.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4 relative">
+                <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt3ac5a8db2523a345/671975faaa96cf4dccf63096/BARBIE_AboutPage_Module1_2386w_Desktop_2024.jpg" alt="Muñeca de Barbie" class="rounded-lg shadow-lg w-full max-w-sm">
+                <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt901253c72d96d290/646513820a3fbbb4bcee3cc4/BARBIE_AboutPage_Module2_2386w_Desktop.jpg" alt="Grupo de muñecas Barbie" class="rounded-lg shadow-lg w-full max-w-sm">
             </div>
             <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
         </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4 p-6">
-            <div class="bg-white rounded-lg p-4 shadow-md w-full max-w-sm">
-                <img src="https://i.pinimg.com/736x/71/00/c2/7100c267519eb3f4a8c7717da1d2301c.jpg" alt="Anuncio de Barbie" class="w-full h-auto">
+    </div>
+
+    <div id="page-3" class="page flex flex-col md:flex-row items-center justify-center text-white min-h-screen p-6">
+        <!-- Nuevo contenedor para limitar el ancho -->
+        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center">
+            <div class="w-full md:w-1/2 flex flex-col items-center justify-center p-6">
+                <h1 class="text-4xl font-bold mb-4 text-center">Tipografía</h1>
+                <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md text-center">
+                    <p class="text-base text-justify">El logotipo de Barbie utiliza una tipografía cursiva rosa brillante con un diseño alegre que transmite sofisticación, estilo, moda y dinamismo. La fuente actual se parece mucho a una versión personalizada de Brush Script Std Medium. A lo largo de los años, también se han usado variaciones como Dollie Script y Barbie Medium, pero el estilo cursivo manuscrito del logotipo sigue siendo un sello distintivo de la marca. Esta tipografía es clave en la identidad de Barbie, ya que mezcla un toque de nostalgia con un estilo moderno, manteniendo su atractivo y fácil reconocimiento.</p>
+                </div>
+                <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4 p-6">
+                <div class="bg-white rounded-lg p-4 shadow-md w-full max-w-sm">
+                    <img src="https://i.pinimg.com/736x/71/00/c2/7100c267519eb3f4a8c7717da1d2301c.jpg" alt="Anuncio de Barbie" class="w-full h-auto">
+                </div>
             </div>
         </div>
     </div>
@@ -236,7 +245,8 @@ Más que un simple contenedor, el empaque refleja la elegancia, el glamour y la 
 
     <!-- Nueva interfaz para la página 10 -->
     <div id="page-10" class="page flex flex-col items-center justify-center text-white min-h-screen">
-        <div class="w-full flex flex-col md:flex-row items-center justify-center">
+        <!-- Nuevo contenedor para limitar el ancho -->
+        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center">
             <div class="md:w-1/2 p-6 flex flex-col items-center justify-center">
                 <h1 class="text-3xl font-bold mb-4 text-center">Valores</h1>
                 <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md">
