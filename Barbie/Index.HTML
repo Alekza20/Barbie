@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Barbie</title>
+    <!-- Incluye la fuente Abril Fatface de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .butterfly-button {
+            background-color: white;
+            color: #E0218A;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 50%;
+            border: 2px solid #E0218A;
+            margin: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-family: serif;
+        }
+        .butterfly-button:hover {
+            transform: scale(1.1);
+        }
+        .butterfly-button::before {
+            content: '🦋';
+            position: absolute;
+            font-size: 40px;
+            z-index: -1;
+            filter: hue-rotate(330deg) saturate(200%);
+        }
+        .page {
+            display: none; /* Oculta todas las páginas por defecto */
+        }
+        .page.active {
+            display: flex; /* Muestra la página activa */
+        }
+        /* Estilo para el fondo rosa principal con el patrón de círculos y flores */
+        body {
+            background-color: #E0218A;
+            position: relative; /* Necesario para posicionar el pseudo-elemento */
+            min-height: 100vh;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Se usa una SVG con círculos blancos y el emoji de flor */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><circle cx="25" cy="25" r="8" fill="%23FFFFFF"/><text x="50" y="60" font-size="20" fill="%23F3A3D0">🌸</text></svg>');
+            background-size: 80px 80px;
+            background-repeat: repeat;
+            opacity: 0.2; /* Opacidad reducida para hacerlo más sutil */
+            z-index: -1; /* Se asegura de que esté detrás del contenido */
+            pointer-events: none; /* Permite que los clics pasen a través del overlay */
+        }
+        /* Aplica la fuente "Abril Fatface" a todos los títulos */
+        h1 {
+            font-family: 'Abril Fatface', serif;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-1 min-h-screen">
+
+    <!-- Página principal -->
+    <div id="main-page" class="page flex items-center justify-center space-x-4 active">
+        <!-- Contenedor izquierdo con 4 mariposas -->
+        <div class="flex flex-col items-center">
+            <button class="butterfly-button" onclick="showPage('page-1')">1</button>
+            <button class="butterfly-button" onclick="showPage('page-2')">2</button>
+            <button class="butterfly-button" onclick="showPage('page-3')">3</button>
+            <button class="butterfly-button" onclick="showPage('page-4')">4</button>
+        </div>
+
+        <!-- Contenedor principal para centrar la imagen -->
+        <div class="w-full max-w-sm relative">
+            <!-- La imagen de Barbie como fondo principal -->
+            <img src="https://i.pinimg.com/736x/83/7a/0d/837a0d96f1c7250773513b387804d3ad.jpg" alt="Muñeca de Barbie" class="mx-auto">
+        </div>
+
+        <!-- Contenedor derecho con 5 mariposas -->
+        <div class="flex flex-col items-center">
+            <button class="butterfly-button" onclick="showPage('page-5')">5</button>
+            <button class="butterfly-button" onclick="showPage('page-6')">6</button>
+            <button class="butterfly-button" onclick="showPage('page-7')">7</button>
+            <button class="butterfly-button" onclick="showPage('page-8')">8</button>
+            <button class="butterfly-button" onclick="showPage('page-9')">9</button>
+        </div>
+    </div>
+
+    <!-- Interfaces para cada botón -->
+    <div id="page-1" class="page flex flex-col items-center justify-center text-white min-h-screen">
+        <div class="w-full h-1/2 bg-[#E0218A] p-6 flex flex-col items-center justify-center">
+            <h1 class="text-4xl font-bold mb-4 text-center text-white">Logo de Barbie</h1>
+            <p class="text-base text-center text-white">El logotipo de Barbie utiliza una tipografía cursiva en un rosa brillante que transmite alegría, feminidad, sofisticación y elegancia. Desde 1959 este tono, conocido como “rosa Barbie” (Pantone 219), se ha convertido en un símbolo de glamour y en un elemento central de la identidad visual de la marca. En 2009, Mattel lo registró oficialmente, por lo que su uso en marcas o empaques que puedan generar confusión está prohibido sin autorización. Hoy en día, este color sigue siendo un componente indispensable de la imagen y el carácter de Barbie.</p>
+        </div>
+        <div class="w-full h-1/2 bg-white flex flex-col items-center justify-center p-6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Barbie_Logo.svg/1200px-Barbie_Logo.svg.png" alt="Logotipo de Barbie" class="mx-auto w-full max-w-sm">
+            <button class="mt-8 px-4 py-2 bg-[#E0218A] text-white rounded-full" onclick="showPage('main-page')">Volver</button>
+        </div>
+    </div>
+    
+    <div id="page-2" class="page flex flex-col md:flex-row items-center justify-center text-white min-h-screen relative">
+        <!-- Botón de mariposa en la esquina superior izquierda -->
+        <div class="absolute top-4 left-4">
+            <button class="butterfly-button" onclick="showPage('page-10')">10</button>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col p-6 items-center justify-center">
+            <h1 class="text-3xl font-bold mb-4 text-center">Valores y misión</h1>
+            <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md text-center">
+                <p class="text-lg text-center font-bold mb-4">Nuestro compromiso</p>
+                <p class="text-base text-justify">“Sabemos que una muñeca pequeña puede causar un gran impacto. Hoy, como parte del propósito de Mattel de inspirar a la siguiente generación, Barbie se ha comprometido principalmente con la representación, el empoderamiento y la sostenibilidad ambiental.” Este compromiso se refleja en iniciativas como el proyecto Dream Gap, que busca cerrar la brecha que hace que muchas niñas pierdan confianza en sus habilidades a partir de los 5 años, proporcionándoles los recursos necesarios para seguir creyendo en sí mismas y en sus metas.</p>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4 relative">
+            <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt3ac5a8db2523a345/671975faaa96cf4dccf63096/BARBIE_AboutPage_Module1_2386w_Desktop_2024.jpg" alt="Muñeca de Barbie" class="rounded-lg shadow-lg w-full max-w-sm">
+            <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt901253c72d96d290/646513820a3fbbb4bcee3cc4/BARBIE_AboutPage_Module2_2386w_Desktop.jpg" alt="Grupo de muñecas Barbie" class="rounded-lg shadow-lg w-full max-w-sm">
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+
+    <div id="page-3" class="page flex flex-col md:flex-row items-center justify-center text-white min-h-screen p-6">
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center p-6">
+            <h1 class="text-4xl font-bold mb-4 text-center">Tipografía</h1>
+            <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md text-center">
+                <p class="text-base text-justify">El logotipo de Barbie utiliza una tipografía cursiva rosa brillante con un diseño alegre que transmite sofisticación, estilo, moda y dinamismo. La fuente actual se parece mucho a una versión personalizada de Brush Script Std Medium. A lo largo de los años, también se han usado variaciones como Dollie Script y Barbie Medium, pero el estilo cursivo manuscrito del logotipo sigue siendo un sello distintivo de la marca. Esta tipografía es clave en la identidad de Barbie, ya que mezcla un toque de nostalgia con un estilo moderno, manteniendo su atractivo y fácil reconocimiento.</p>
+            </div>
+            <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4 p-6">
+            <div class="bg-white rounded-lg p-4 shadow-md w-full max-w-sm">
+                <img src="https://i.pinimg.com/736x/71/00/c2/7100c267519eb3f4a8c7717da1d2301c.jpg" alt="Anuncio de Barbie" class="w-full h-auto">
+            </div>
+        </div>
+    </div>
+    
+    <div id="page-4" class="page flex flex-col items-center justify-center text-white min-h-screen p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Color</h1>
+        <div class="w-full max-w-2xl bg-white p-8 rounded-2xl text-[#E0218A] shadow-md flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+            <div class="md:w-1/2 flex flex-col items-center justify-center space-y-4">
+                <img src="https://zizer.es/wp-content/uploads/2023/07/valla-1024x573.jpg" alt="Publicidad de Barbie" class="rounded-lg w-full h-auto shadow-lg">
+                <img src="https://www.pixartprinting.it/blog/wp-content/uploads/2023/11/2.jpg" alt="Publicidad de Barbie" class="rounded-lg w-full h-auto shadow-lg">
+            </div>
+            <div class="md:w-1/2">
+                <p class="text-base text-justify">Presentada en 1959, Barbie no solo se convirtió en una muñeca icónica, sino también en un fenómeno cultural, reconocida por su vibrante tono rosa, conocido como ‘Rosa Barbie’ (Pantone 219C). Este color se ha vuelto sinónimo de la marca, presente en su vestuario, coches, casas y otros juguetes.</p>
+                <p class="text-base text-justify mt-4">El rosa Barbie es brillante, cálido y alegre, transmitiendo feminidad y un atractivo juvenil. Representa cualidades como amabilidad, cariño y dulzura, que encajan con el carácter de Barbie como amiga amable y cariñosa. Además, Barbie Pink está muy ligado a la moda. Su tono vibrante llama la atención al instante y refleja perfectamente el estatus de Barbie como un ícono de estilo que siempre marca tendencias y sorprende con su originalidad.</p>
+                <p class="text-base text-justify mt-4">Pero lo más importante de Barbie Rosa es que simboliza vitalidad y energía. Su intensidad refleja los múltiples roles que Barbie ha asumido a lo largo de los años, desde astronauta hasta presidenta, mostrando que cualquier niña puede ser quien quiera ser.</p>
+            </div>
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+    
+    <div id="page-5" class="page flex flex-col items-center justify-center text-white min-h-screen p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Materiales de marketing</h1>
+        <div class="w-full max-w-2xl bg-white p-8 rounded-2xl text-[#E0218A] shadow-md flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8">
+            <div class="md:w-1/2 flex flex-col items-center justify-center space-y-4">
+                <img src="https://i.pinimg.com/736x/c9/0b/a8/c90ba8a00c80fe70a997ac2baf1db5e1.jpg" alt="Publicidad de la película de Barbie" class="rounded-lg w-full h-auto shadow-lg">
+                <img src="https://media.revistagq.com/photos/64b65caa8e7e7c1e1e0cbce1/4:3/w_1244,h_933,c_limit/burger-king-brazil-barbie-burger-announcement.jpg" alt="Anuncio de Burger King y Barbie" class="rounded-lg w-full h-auto shadow-lg">
+            </div>
+            <div class="md:w-1/2">
+                <p class="text-base text-justify"><b>Medios audiovisuales:</b> Creó un “universo cinematográfico” con películas, series, videojuegos, libros, videos en redes sociales y cómics.</p>
+                <p class="text-base text-justify mt-4"><b>Marketing viral:</b> Los pósteres de personajes se volvieron virales en internet, y se incorporó la participación de los usuarios a través de herramientas como el Generador de Selfies, aprovechando memes y redes sociales.</p>
+                <p class="text-base text-justify mt-4"><b>Experiencias inmersivas:</b> Barbie ofreció la DreamHouse en Airbnb y cajas de muñeca en cines, permitiendo a los fans vivir y fotografiar experiencias únicas de la marca.</p>
+                <p class="text-base text-justify mt-4"><b>Colaboraciones con marcas:</b> Por ejemplo, Burger King lanzó un menú temático de Barbie (hamburguesa rosa, batido de fresa, papas de Ken).</p>
+                <p class="text-base text-justify mt-4"><b>Contenido para videojuegos:</b> Colaboraciones con Xbox y Forza Horizon 5 permitieron expandir la presencia de Barbie hacia el público masculino y los gamers.</p>
+            </div>
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+    
+    <div id="page-6" class="page flex flex-col items-center justify-center text-white min-h-screen p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Empaquetado</h1>
+        <div class="w-full max-w-2xl flex flex-col items-center justify-center">
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
+                <img src="https://images.mattel.net/image/upload/w_1292,f_auto,c_scale/shop-emea-prod/files/khjac6illbxc6zanyw6l_bc9df2af-36a0-4405-bf27-faecb08c4253.jpg" alt="Caja de la muñeca Barbie" class="rounded-lg w-full md:w-1/2 h-auto shadow-lg">
+                <img src="https://images.mattel.net/images/w_1296,h_1296,f_auto,c_pad/shop-emea-prod/products/t2mbetn3eb5udi85xuso_4d5459c6-0948-409e-8965-8f4eb5048718/.jpg" alt="Empaque de la muñeca Barbie" class="rounded-lg w-full md:w-1/2 h-auto shadow-lg">
+            </div>
+            <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md">
+                <p class="text-base text-justify">El empaque de Barbie es un elemento clave de su identidad y encanto, creando un mundo rosa y personalizado que ha cautivado a millones de niñas durante más de 60 años. Su diseño es rectangular y de cartón, con una ventana transparente que permite ver la muñeca, este empaque ha evolucionado con el tiempo, pero siempre mantiene su esencia: mostrar a Barbie sonriente, vestida a la moda y rodeada de accesorios que inspiran creatividad y la imaginación.
+Más que un simple contenedor, el empaque refleja la elegancia, el glamour y la personalidad de Barbie, animando a las niñas a soñar en grande y a expresar su individualidad. Además, los empaques especiales de ediciones de colección, con detalles de diseño y accesorios exclusivos, han convertido a Barbie en un objeto deseado por los coleccionistas, aportando valor, sofisticación y un sentido de exclusividad a cada muñeca.</p>
+            </div>
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+    
+    <div id="page-7" class="page flex flex-col items-center justify-center text-white min-h-screen p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Sonido</h1>
+        <div class="w-full max-w-2xl bg-white p-8 rounded-2xl text-[#E0218A] shadow-md flex flex-col items-center space-y-4">
+            <p class="text-base text-justify">Barbie no tiene un jingle o sonido de marca que la identifique de inmediato, pero la banda sonora de la película de 2023 ha cumplido un papel similar. Con 16 canciones originales de artistas como Dua Lipa, Nicki Minaj, Lizzo, Billie Eilish, Karol G y Ryan Gosling, la música se volvió muy popular y se relaciona directamente con la marca, reforzando su estilo, sus valores y su historia. Temas como “Dance The Night” de Dua Lipa y “Barbie World” de Nicki Minaj e Ice Spice se han convertido en canciones emblemáticas asociadas a esta nueva etapa de Barbie.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mt-4">
+                <img src="https://larepublica.cronosmedia.glr.pe/original/2023/04/04/642c3a5b2c81d97ab32691d7.jpg" alt="Portada de la banda sonora de la película de Barbie" class="rounded-lg w-full md:w-1/2 h-auto shadow-lg">
+                <img src="https://i.ytimg.com/vi/cW8VLC9nnTo/maxresdefault.jpg" alt="Actuación de Dua Lipa en la película de Barbie" class="rounded-lg w-full md:w-1/2 h-auto shadow-lg">
+            </div>
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+    
+    <div id="page-8" class="page flex flex-col items-center justify-center text-white min-h-screen p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Eventos y experiencias</h1>
+        <div class="w-full max-w-2xl flex flex-col md:flex-row items-start space-y-8 md:space-y-0 md:space-x-8">
+            <div class="w-full md:w-1/2 bg-white p-8 rounded-2xl text-[#E0218A] shadow-md">
+                <p class="text-base text-justify">La marca Barbie ha creado diversos eventos y experiencias para conectar con su audiencia y promocionar su imagen. Entre ellos destacan el "World of Barbie" en Santa Mónica, un espacio inmersivo de 20.000 pies cuadrados con la Casa de Ensueño, el Camper Van, un estudio de música y un cohete interactivo. En Ciudad de México se realizó la "Selfie Experience de Barbie", un recorrido de 20 minutos por 10 escenarios temáticos inspirados en la película de 2023, donde los asistentes podían tomar fotos y explorar muñecas de colección. Además, Barbie ha colaborado con marcas como ZARA y Airbnb para ofrecer colecciones de moda y estancias temáticas, permitiendo a los fans vivir experiencias únicas vinculadas a la marca.</p>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4">
+                <img src="https://www.santamonica.com/wp-content/uploads/2023/04/world-of-barbie.png" alt="World of Barbie en Santa Mónica" class="rounded-lg w-full h-auto shadow-lg">
+                <img src="https://media.timeout.com/images/106025671/image.jpg" alt="Selfie Experience de Barbie" class="rounded-lg w-full h-auto shadow-lg">
+            </div>
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+    
+    <div id="page-9" class="page flex flex-col items-center justify-center text-white min-h-screen p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Tono de voz</h1>
+        <div class="w-full max-w-2xl bg-white p-8 rounded-2xl text-[#E0218A] shadow-md flex flex-col items-center space-y-8">
+            <div class="w-full">
+                <p class="text-base text-justify">El tono de la marca Barbie es principalmente optimista, empoderador y alegre, buscando reflejar la libertad, la creatividad y la diversión que la muñeca ha representado a lo largo de los años. Se adapta a la audiencia, mostrando un lenguaje inspirador y alegre para celebrar los sueños y aspiraciones</p>
+            </div>
+            <!-- Contenedor para las imágenes lado a lado -->
+            <div class="w-full flex flex-row items-center justify-center space-x-4">
+                <img src="https://media.licdn.com/dms/image/v2/D4D22AQFy8UHZvz3BKw/feedshare-shrink_800/feedshare-shrink_800/0/1732225258190?e=2147483647&v=beta&t=Q3970Qf29IOIH_vL_lIMr50wGuOsVW_odihm7a3RfXA" alt="Dos muñecas Barbie con vestimenta de diseñador, una sentada en una silla y la otra de pie al lado." class="rounded-lg w-1/2 max-w-xs h-auto shadow-lg">
+                <img src="https://revistavelvet.cl/wp-content/uploads/2022/12/IMG_2399.jpg" alt="Una muñeca Barbie rubia con un vestido azul posando sobre una cama decorada con una manta." class="rounded-lg w-1/2 max-w-xs h-auto shadow-lg">
+            </div>
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+
+    <!-- Nueva interfaz para la página 10 -->
+    <div id="page-10" class="page flex flex-col items-center justify-center text-white min-h-screen">
+        <div class="w-full flex flex-col md:flex-row items-center justify-center">
+            <div class="md:w-1/2 p-6 flex flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold mb-4 text-center">Valores</h1>
+                <div class="bg-white p-8 rounded-2xl text-[#E0218A] shadow-md">
+                    <p class="text-base text-justify">
+                        <b>Diversidad e inclusión:</b> Barbie reconoce la importancia de la representación y ha evolucionado para ser más inclusiva, ofreciendo muñecas con distintos tipos de cuerpo, tonos de piel y estilos que reflejan mejor el mundo real.<br><br>
+                        <b>Empoderamiento:</b> La marca promueve la autoaceptación y transmite la idea de que no hay límites para lo que una niña puede lograr.<br><br>
+                        <b>Creatividad e imaginación:</b> Jugar con Barbie estimula la creatividad y la capacidad de imaginar diferentes mundos y roles.<br><br>
+                        <b>Responsabilidad social y medioambiental:</b> Barbie y Mattel fomentan la conciencia ambiental mediante el uso de materiales reciclados y programas de reciclaje.
+                    </p>
+                </div>
+                <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('page-2')">Volver</button>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center justify-center space-y-4 p-6">
+                <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/bltaaf8696d34f7d123/646513803929fd0ada40375a/BARBIE_AboutPage_Module4_2386w_Desktop.jpg" alt="Muñeca de Barbie de la línea Fashionista" class="rounded-lg shadow-lg w-full max-w-sm">
+                <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt0700ccbe2822e749/6465137b0227873c502d86ec/BARBIE_AboutPage_Module5_2386w_Desktop.jpg" alt="Muñeca de Barbie de la línea Fashionista" class="rounded-lg w-full max-w-sm">
+            </div>
+        </div>
+        <!-- Botón de mariposa en la esquina inferior izquierda -->
+        <div class="absolute bottom-4 left-4">
+            <button class="butterfly-button" onclick="showPage('page-11')">11</button>
+        </div>
+    </div>
+    
+    <!-- Nueva interfaz para la página 11 -->
+    <div id="page-11" class="page flex flex-col items-center justify-center text-white min-h-screen p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Diversidad</h1>
+        <!-- Contenedor del video ahora con clases de ancho completas -->
+        <div class="w-full max-w-7xl bg-white p-8 rounded-2xl shadow-md flex flex-col items-center">
+            <iframe 
+                class="w-full aspect-video rounded-lg" 
+                src="https://www.youtube.com/embed/D_q8Z2jOFKE" 
+                title="Barbie | Un Mundo de Posibilidades" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <button class="mt-8 px-4 py-2 bg-white text-[#E0218A] rounded-full" onclick="showPage('main-page')">Volver</button>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+            const selectedPage = document.getElementById(pageId);
+            selectedPage.style.display = 'flex';
+        }
+        showPage('main-page');
+    </script>
+</body>
+</html>
